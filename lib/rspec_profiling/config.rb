@@ -5,11 +5,9 @@ module RspecProfiling
 
   def self.config
     @config ||= OpenStruct.new({
-      vcs: RspecProfiling::VCS::Git,
-      collector:  RspecProfiling::Collectors::Database,
-      db_path:    'tmp/rspec_profiling',
+      vcs: RspecProfiling::VCS::GitSvn,
+      collector:  RspecProfiling::Collectors::PSQL,
       table_name: 'spec_profiling_results',
-      csv_path:   Proc.new { 'tmp/spec_benchmarks.csv' }
     })
   end
 end
